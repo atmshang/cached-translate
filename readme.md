@@ -18,11 +18,11 @@ translated := translate.I18n(text, "en", "ja")
 fmt.Println("translated:", translated)
 ```
 
-您也可以从 HTTP 请求中获取用户的首选语言进行翻译：
+您也可以从 HTTP 请求中获取用户的首选语言进行翻译，这里的Quick方法中默认原语言是中文：
 
 ```go
 func handleRequest(w http.ResponseWriter, r *http.Request) {
-text := "Hello World"
+text := "你好世界"
 translated := translate.QuickI18nFromRequest(text, r)
 fmt.Fprintln(w, "translated:", translated)
 }
